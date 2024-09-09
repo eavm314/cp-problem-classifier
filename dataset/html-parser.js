@@ -32,7 +32,7 @@ const cleanData = (data) => {
   return {
     timeLimit: parseFloat(timeLimitValue),
     memoryLimit: parseFloat(memoryLimitValue),
-    combinedText: cleanText,
+    statement: cleanText,
   }
 }
 
