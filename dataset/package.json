@@ -1,0 +1,14 @@
+{
+  "name": "codeforces_dataset",
+  "version": "1.0.0",
+  "description": "Downloader and scraper for Codeforces Problems Statements",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Enrique Vicente",
+  "license": "ISC",
+  "dependencies": {
+    "node-html-parser": "^6.1.13"
+  }
+}
