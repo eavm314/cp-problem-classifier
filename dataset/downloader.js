@@ -12,8 +12,8 @@ const getProblems = async (tags) => {
 const downloadProblem = async (problem) => {
   const url = `https://codeforces.com/problemset/problem/${problem.contestId}/${problem.index}`
   const res = await fetch(url)
-  const text = await res.text()
-  return text
+  const rawHtml = await res.text()
+  return { success: res.ok, rawHtml }
 }
 
 module.exports = { getProblems, downloadProblem }
