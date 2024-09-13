@@ -4,3 +4,6 @@ node_modules/
 
 data/
 untracked/
+
+*.keras
+*.h5
