@@ -7,3 +7,4 @@ untracked/
 
 *.keras
 *.h5
+*.model
