@@ -25,14 +25,14 @@ const cleanData = (data) => {
   const timeLimitValue = timeLimit.match(/\d+/)[0];
   const memoryLimitValue = memoryLimit.match(/\d+/)[0];
 
-  const cleanText = combinedText.replace(/\\\$+/g, '') // Remove LaTeX notation
-    .replace(/[^a-zA-Z0-9\s]/g, '') // Remove special characters
-    .replace(/\s+/g, ' '); // Remove extra whitespace
+  // const cleanText = combinedText.replace(/\\\$+/g, '') // Remove LaTeX notation
+  //   .replace(/[^a-zA-Z0-9\s]/g, '') // Remove special characters
+  //   .replace(/\s+/g, ' '); // Remove extra whitespace
 
   return {
     timeLimit: parseFloat(timeLimitValue),
     memoryLimit: parseFloat(memoryLimitValue),
-    statement: cleanText,
+    statement: combinedText,
   }
 }
 

@@ -57,7 +57,7 @@ const createTestDataset = async (problems) => {
 
 const createCompleteDataset = async (problems) => {
   let files = await fs.readdir(outputFolder);
-  files = files.filter(file => file !== testFile)
+  files = files.filter(file => !file.startsWith('dataset') && !file.startsWith('test'))
   let lastProblemDownloaded = files.length > 0 ? files[0] : null;
   if (lastProblemDownloaded) {
     lastProblemDownloaded = lastProblemDownloaded.replace('.json', '')
