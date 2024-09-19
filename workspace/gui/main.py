@@ -1,22 +1,31 @@
-import tkinter as tk
 from engine import predict
 
+import tkinter as tk
+from tkinter import scrolledtext
+
+super_tags = ['implementation', 'maths', 'graphs', 'optimization', 'special-strings']
 
 def main():
     def on_button_click():
-        user_input = text_box.get()
+        user_input = text_box.get("1.0", tk.END).strip()
         prediction = predict(user_input)
-        print(f"Prediction: {prediction}")
+        my_preds = []
+        for pred, tag in zip(prediction[0], super_tags):
+            my_preds.append((pred, tag))
+        for pred, tag in sorted(my_preds, key=lambda x: x[0], reverse=True):
+            print(f"{tag}: {pred}")
+        print()
+        
     # Create the main window
     root = tk.Tk()
-    root.title("Simple Window")
+    root.title("Programming Problems Classifier")
 
     # Create a label
-    label = tk.Label(root, text="Enter something:")
+    label = tk.Label(root, text="Enter the problem:")
     label.pack()
 
     # Create a text box
-    text_box = tk.Entry(root, width=40)
+    text_box = scrolledtext.ScrolledText(root, width=50, height=20, wrap=tk.WORD)
     text_box.pack()
 
     # Create a button
